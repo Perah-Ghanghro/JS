@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller Game</title>
+    <style>
+
+        body {
+            background-color: rgba(4, 51, 51, 0.815); 
+            display: flex; justify-content: space-evenly;
+            align-items: center; padding: 150px;
+        }
+
+        .container {
+            width: 300px; height: 320px;
+            padding: 50px; border-radius: 20px; 
+            border-color: rgba(5, 53, 53, 0.671); 
+            background-color: rgba(7, 65, 65, 0.671); color: white;
+            flex-direction: column; justify-content: space-evenly;
+            align-items: center; text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        
+        }
+
+        button {
+            width: 150px; height: 30px;  border-radius: 40px;
+            background-color: orange; color: black;
+            border: orangered;
+        }
+
+        .ansbox {
+            width: 300px; height: 60px; border-radius: 20px; 
+            background-color:rgba(5, 53, 58, 0.671) ;
+
+
+
+        }
+    </style>
+
+</head>
+<body>
+    
+
+    <div class="container">
+
+        <h1>Magic 8-ball (Fortune) Teller</h1>
+        <br />
+        <p>Ask a Yes/No question, then click the button! </p>
+        <br />
+        <button id="get-answer-btn">Reveal my fortune</button>
+        <br />
+        <br />
+        <br />
+        <div class="ansbox" id="answer">. . . </div>
+
+    </div>
+
+
+    <script>
+
+        
+        const answers = [
+         "It is certain.",
+         "It is decidedly so.",
+         "Without a doubt.",
+         "Yes definitely.",
+         "You may rely on it.",
+         "As I see it, yes.",
+         "Most likely.",
+         "Outlook good.",
+         "Yes.",
+         "Signs point to yes.",
+         "Reply hazy, try again.",
+         "Ask again later.",
+         "Better not tell you now.",
+         "Cannot predict now.",
+         "Concentrate and ask again.",
+         "Don't count on it.",
+         "My reply is no.",
+         "My sources say no.",
+         "Outlook not so good.",
+         "Very doubtful."
+    ]
+
+    const getAnswerBtn = document.querySelector("#get-answer-btn")
+    const answerDisplay = document.querySelector( "#answer")
+
+
+    function showRandomAnswer() {
+    const randomIndex = Math.floor (Math.random() * answers.length)
+    const randomAnswer = answers[ randomIndex]
+    answerDisplay.textContent = randomAnswer
+}
+
+getAnswerBtn.addEventListener("click", showRandomAnswer)
+
+    </script>
+</body>
+</html>

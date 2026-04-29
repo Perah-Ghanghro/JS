@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+       
+        body {
+            background-color: #e0e5ec;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            height: 100vh;  font-family: 'Segoe UI', sans-serif;
+        }
+
+         .box {
+            width: 550px; height: 600px; gap: 5px;
+            border-radius: 20px; border-color: #444;
+            padding: 20px; border: solid rgba(73, 72, 72, 0.384);
+            flex-direction: column; align-items: center; justify-content: space-around;
+        }
+
+        .calculator-body {
+            width: 400px;  height: 600px; padding: 30px;
+            background-color: #939597;
+            border-radius: 30px; border: #555;
+            box-shadow: 20px 20px 60px #bec3c9, -20px -20px 60px #ffffff;
+            display: flex; flex-direction: row;
+            align-items: center; justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .screen {
+            background-color: #babdc0;
+            padding: 20px; border-radius: 20px; text-align: right; 
+            box-shadow: inset 6px 6px 12px #bec3c9, inset -6px -6px 12px #ffffff;        
+        }
+
+        input {
+            width: 500px; padding: 15px; gap: 5px;  border: #939597; 
+            background: #e0e5ec;  border-radius: 12px; outline: none;
+            box-shadow: inset 4px 4px 8px #bec3c9, inset -4px -4px 8px #ffffff; 
+            font-size: 1.5rem; color: #555;  text-align: center;
+            align-items: center; justify-content: space-between;
+        }
+
+        .grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 20px;  margin-top: 25px;
+        }
+        
+        button {
+            padding: 20px; border-radius: 15px;  margin: 2px; 
+            border: #939597;  background: #e0e5ec;
+            box-shadow: 6px 6px 12px #bec3c9, -6px -6px 12px #ffffff;
+            font-size: 1.8rem; font-weight: bold;  color: #555;
+            
+        }
+
+        .box2 {
+            padding: 30px; gap: 15px; 
+            flex-direction: row; align-items: center;
+            justify-content: space-evenly;
+        }
+        
+        .box3 {
+            font-size: 2.5rem; color: #2b2929; 
+            font-weight: bold; min-height: 60px; border-radius: 10px;
+            box-shadow: inset 4px 4px 8px #bec3c9, inset -4px -4px 8px #ffffff; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <!--form -->
+    <div class="box">
+        <br />
+        <input id="num1" type="number" placeholder="enter a number" />
+        <br />
+        <input id="num2" type="number" placeholder="enter a number" />
+        <br />
+
+         <div class="box2">
+        <button onclick="add()" id="plus">+</button>
+        <button onclick="subtract()" id="minus">-</button>
+        <button onclick="multiplication()" id="multiply">*</button>
+        <button onclick="division()" id="divide">/</button>
+        </div>
+        <div class="box3"><p id="result">Please enter numbers and select operation</p></div>
+        </div>
+
+    <!--/form-->
+
+    <script>
+        const num1 = Number (document.getElementById('num1').value)
+        const num2 = Number (document.getElementById('num2').value)
+
+        const plus = document.getElementById('plus')
+        const minus = document.getElementById('minus')
+        const multiply = document.getElementById('multiply')
+        const divide = document.getElementById('divide')
+
+         const result = document.getElementById('result')
+
+         function add(){
+            const num1 = Number (document.getElementById('num1').value)
+            const num2 = Number (document.getElementById('num2').value)
+            result.innerText = "Result:  " + (num1 + num2);
+         }
+         function subtract(){
+            const num1 = Number (document.getElementById('num1').value)
+            const num2 = Number (document.getElementById('num2').value)  
+            result.innerText = "Result:  " + (num1 - num2);
+         }
+         function multiplication(){
+            const num1 = Number (document.getElementById('num1').value)
+            const num2 = Number (document.getElementById('num2').value)
+            result.innerText = "Result:  " + (num1 * num2);
+         }
+         function division(){
+            const num1 = Number (document.getElementById('num1').value)
+            const num2 = Number (document.getElementById('num2').value)
+            result.innerText = "Result:  " + (num1 / num2);
+         } 
+    </script>
+    
+</body>
+</html>
