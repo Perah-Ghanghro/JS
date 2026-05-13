@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>setTimeout & setInterval Console Demo</h2>
+
+    <button id="btnTimeout" >Run setTimeout</button>
+    <button id="btnInterval" >Run setInterval</button>
+
+    <script>
+        document.getElementById('btnTimeout').addEventListener('click', function(){
+            console.log("setTimeout triggered: waiting 3 seconds...");
+
+            setTimeout(function() {
+                console.log("setTimeout fired!");
+            }, 3000);
+        });
+
+
+         document.getElementById('btnInterval').addEventListener('click', function(){
+            console.log("setInterval triggered: Running every 1 second...");
+
+            let counter = 0;
+
+            let intervalId = setInterval(function() {
+                counter++;
+                console.log("⏱setInterval tick: " + counter);
+
+                if (counter >= 5) {
+                    clearInterval (intervalId);
+                    console.log("setInterval stopped automatically after  5 ticks. ");
+                }
+            }, 1000);
+            });
+        
+    </script>
+</body>
+</html>
